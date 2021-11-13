@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Hanoicomputer</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<body>
+	<script type="text/javascript">
+
+
+	inames = []
+	iqtyp = []
+	iprice = []
+
+	
+	function addItem(){ 
+	  inames.push(document.getElementById('tensanpham').value)
+	  iqtyp.push(parseInt(document.getElementById('soluong').value))
+	  iprice.push(parseInt(document.getElementById('dongia').value))
+	  displayCart()
+	}
+
+	function displayCart()
+	{
+	  data = '<table><tr><th>Tên Sản Phẩm</th><th>Số Lượng</th><th>Đơn Gía</th><th>Tổng Tiền</th></tr>';
+	  
+	  total = 0;
+	  
+	  for (i=0; i<inames.length; i++){
+	    total += iqtyp[i] * iprice[i]
+	    data += "<tr><td>" + inames[i] + "</td><td>" + iqtyp[i] + "</td><td>" + iprice[i] + "</td><td>" + iqtyp[i] * iprice[i] + "</td></tr>"
+	  }
+	  	document.getElementById('cart').innerHTML = data;
+  
+	}
+
+
+	function myClick()  {
+			var x = confirm("Xác nhận mua mặt hàng này");
+			if(x)  {
+			alert("Cảm ơn bạn tin tưởng sản phẩm của chúng tôi");
+			}
+			else  {
+		 		alert("Mời bạn quay lại tham khảo sản phẩm khác");	
+			}
+		}
+	</script>
+
+	<div id="menu">
+		<header>
+			  <img src="Picture/Logo.png" width="972px" height="250px" />
+			  <div class="menu">
+					<a href="dangki.html">Đăng Kí</a>
+					<a href="dangnhap.html">Đăng Nhập</a>
+			  </div>
+		</header>
+	<br />
+
+	<nav>
+		<ul>
+			  <li><a href="index.html"> TRANG CHỦ</a></li>
+			  <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+			  <li><a href="#">TÌM KIẾM THEO HÃNG</a>
+					<ul>
+						  <li><a href="ASUS.html">ASUS</a>
+								<ul>
+									  <li><a href="asus1.html">ASUS - 1</a> </li>
+									  <li><a href="asus2.html">ASUS - 2</a> </li>
+									  <li><a href="asus3.html">ASUS - 3</a> </li>
+								</ul>
+						  </li>
+						  <li><a href="DELL.html">DELL </a>
+								<ul>
+									  <li><a href="dell1.html">DELL - 1</a> </li>
+									  <li><a href="dell2.html">DELL - 2</a> </li>
+									  <li><a href="dell3.html">DELL - 3</a> </li>
+								</ul>
+						  </li>
+
+						  <li><a href="MSI.html">MSI</a>
+								<ul>
+									  <li><a href="MSI1.html">MSI - 1</a> </li>
+									  <li><a href="MSI2.html">MSI - 2</a> </li>
+									  <li><a href="MSI3.html">MSI - 3</a> </li>
+								</ul>
+						  </li>
+
+					</ul>
+			  </li>
+			  <li><a href="huongdan.html">HƯỚNG DẪN MUA HÀNG</a></li>
+			  <li><a href="lienhe.html">LIÊN HỆ</a></li>
+		</ul>
+  </nav>
+	<br>
+
+	<article> 
+	<br />
+
+        <button class="button" onclick="myClick()">Xác Nhận</button> 
+    <body>
+    
+    <div id='frm'>
+    	<center>
+    	<table border="0">
+    		<tr>
+    			<td>
+    				Tên Sản Phẩm
+    			</td>
+    			<td>
+    				Số Lượng
+    			</td>
+    			<td>
+    				Đơn Gía
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				<input id='tensanpham' type='text'><br>
+    			</td>
+    			<td>
+    				<input id='soluong' type='number'><br>
+    			</td>
+    			<td>
+    				<input id='dongia' type='number'><br>
+    			</td>
+    		</tr>
+    	</table>
+	    <button onclick='addItem()'>Thêm Vào</button>
+	    </center>
+    </div>
+    <center>
+    <div id='cart'></div>
+	</center>
+
+
+	</article>
+
+	<aside>
+
+		<div class="menu1">
+			  <h3>DANH MỤC SẢN PHẨM</h3>
+			  <img src="Picture/icon2.png" />
+			  <div align="justify">
+					<ul style="list-style: circle;">
+						  <li><a href="laptopmaytinhxachtay.html">Laptop, máy tính xách tay</a></li>
+						  <li><a href="pcgamingstreaming.html">PC gaming, streaming</a></li>
+						  <li><a href="linhkienmaytinh.html">Linh kiện máy tính</a></li>
+						  <li><a href="banphimchuotgaminggear.html">Bàn phím chuột, gaming gear</a></li>
+						  <li><a href="manhinhmaytinh.html">Màn hình máy tính</a></li>
+						  <li><a href="PhukienLaptopPC.html">Phụ kiện Laptop,PC</a></li>
+						  <li><a href="tannhietPC.html">Tản nhiệt PC, cooling</a></li>
+						  <li><a href="TIVI.html">Tivi, điện lạnh, đồ gia dụng</a></li>
+					</ul>
+			  </div>
+		</div>
+		<br />
+		<div class="menu2" align="center">
+			  <h3>HỖ TRỢ TRỤC TUYẾN</h3>
+			  <img src="Picture/icon2.png" />
+			  <p> Tư vấn 1</p>
+			  <a href="https://www.facebook.com/www.hanoicomputer.vn"><img src="Picture/fb_icon_325x325.png"
+						  width="110px" height="150px" /></a>
+			  <p> Điện Thoại : 1900.1903</p>
+			  <hr />
+			  <p> Tư vấn 2</p>
+			  <a href="https://www.facebook.com/www.hanoicomputer.vn"><img
+						  src="Picture/Comunication-01-512.png" width="110px" height="150px" /></a>
+			  <p> Điện Thoại : 1900.1903</p>
+		</div>
+		<div class="menu2" align="center">
+			  <h3>ĐỊA CHỈ SHOP</h3>
+			  <img src="Picture/icon2.png" />
+			  <iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5351005885764!2d105.81942051486145!3d21.011264886007883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7d94ae54b9%3A0x21aae6c934d53ad6!2sHANOICOMPUTER!5e0!3m2!1svi!2sus!4v1607099707883!5m2!1svi!2sus"
+					width="250" height="200" frameborder="0" style="border:0;" allowfullscreen=""
+					aria-hidden="false" tabindex="0"></iframe>
+			  <br /><br /><br />
+			  <img src="Picture/logoSaleNoti.png" width="200px" />
+		</div>
+  </aside>
+  <footer align="center">
+		<br />
+		<marquee class="chuchay1"> HỖ TRỢ NHIỆT TÌNH Tư vấn, giải đáp mọi thắc mắc</marquee>
+		<div class="ketthuc"><a href="index.html">Các sản phẩm bán chạy</a></div>
+		<br />
+		<b>Địa chỉ: Số 43 Thái Hà - Đống Đa - Hà Nội</b>
+		<br />
+		<br />
+		<p>Hotline của shop:1900 1903 ~ (0243) 5380088</p>
+  </footer>
+</div>
+
+</body>
+</html>
